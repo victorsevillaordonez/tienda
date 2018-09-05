@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Administracion de productos</title>
+</head>
+<body>
+{% block titulo %}
+	{{ p.nombre }}
+{% endblock %}
+{% block contenido %}
+<h1>Detalle del producto</h1>
+<p>
+	{% load static %}
+	<img src="/media/{{ p.foto }}" width="250px">
+	Nombre : {{ p.nombre }}
+	Precio : {{ p.precio }}
+	Stock : {{ p.stock }}
+	marca : {{ p.marca }}
+	<a href="{% url 'editar_producto_view' id_prod=p.id %}">Editar producto</a>
+	<a href="{% url 'eliminar_producto_view' id_prod=p.id %}">Eliminar producto</a>
+
+</p>
+<a href="{% url 'lista_productos_view' %}">Lista de productos</a>
+{% endblock %}
+</body>
+</html>

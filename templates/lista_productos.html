@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Administracion de productos</title>
+</head>
+<body>
+{% block titulo %}
+	lista de productos
+{% endblock %}
+{% block contenido %}
+<h1>Lista de productos</h1>
+{% for p in lista %}
+<p>
+	Nombre : {{ p.nombre }}
+	Precio : {{ p.precio }}
+	Stock : {{ p.stock }}
+	marca : {{ p.marca }}
+	<a href="{% url 'ver_producto_view' id_prod=p.id %}">Ver Detalles</a>
+
+</p>
+{% endfor %}
+{% endblock %}
+</body>
+</html>

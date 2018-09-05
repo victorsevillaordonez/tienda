@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registro de usuario</title>
+</head>
+<body>
+{% block titulo %}
+Registrar usuario
+{% endblock %}
+
+{% block contenido %}
+	<form action="" method="POST">
+		{% csrf_token %}
+		{{ formulario.as_p }}
+		<input type="submit" value="Registrar Usuario"/>
+	</form>
+{% endblock %}
+</body>
+</html>

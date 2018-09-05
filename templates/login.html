@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tienda</title>
+</head>
+<body>
+{% block titulo %}
+	Inicio de sesión
+{% endblock %}
+{% block contenido %}
+<h2>{{ msj }}</h2>
+<form action="" method="POST">
+		{% csrf_token %}
+		{{ formulario.as_p }}
+		<input type="submit" value="Iniciar Sesión"/>
+</form>
+{% endblock %}
+</body>
+</html>

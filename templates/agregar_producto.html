@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Administracion de productos</title>
+</head>
+<body>
+{% block titulo %}
+	Agregar producto
+{% endblock %}
+
+{% block contenido %}
+	<form action="" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ formulario.as_p }}
+		<input type="submit" value="Agregar producto"/>
+		<a href="{% url 'registrar_usuario_view' %}">Registrar Usuario</a>
+	<a href="{% url 'logout_view' %}">Cerrar Sesión</a>
+	</form>
+{% endblock %}
+</body>
+</html>
