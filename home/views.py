@@ -12,9 +12,11 @@ def quienes_somos_view(request):
 	return render(request,'quienes_somos.html')
 
 def lista_productos_view(request):
-	lista = Producto.objects.filter()
-	return render(request,'lista_productos.html',locals())
-
+	if request.user.is_superuser:
+		lista = Producto.objects.filter()
+		return render(request,'lista_productos.html',locals())
+	else:
+		return redirect('/')
 """CRUD PARA PRODUCTO"""
 def agregar_producto_view(request):
 	if request.method == 'POST':
